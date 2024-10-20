@@ -1,0 +1,8 @@
+#!/bin/bash
+# Please make sure to launch Amazon Linux 2
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "2 route tables for communications to flow to right channel with names as: $(hostname -f)" > /var/www/html/index.html
+echo "Healthy" > /var/www/html/health.html
